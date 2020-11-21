@@ -26,7 +26,7 @@ with ncmapi() as api:
 # 退出运行时上下文时自动退出登录并停止服务进程
 ```
 
-更多使用例子请前往[文档](https://github.com/NKID00/NeteaseCloudMusicApiPy/wiki)
+更多代码示例请前往[文档](https://github.com/NKID00/NeteaseCloudMusicApiPy/wiki)
 
 ## 特性
 
