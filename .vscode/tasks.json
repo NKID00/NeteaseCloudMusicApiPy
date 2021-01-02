@@ -4,7 +4,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Mypy",
+            "label": "Mypy 检查",
             "type": "shell",
             "command": "mypy ncmapi.py",
             "presentation": {
@@ -14,6 +14,36 @@
                 "panel": "shared",
                 "showReuseMessage": false,
                 "clear": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "同步推送到仓库和 Wiki",
+            "type": "shell",
+            "windows": {
+                "command": "powershell",
+                "args": [
+                    "-Command",
+                    "& git push origin ; git push origin.wiki"
+                ],
+            },
+            "linux": {
+                "command": "git push origin ; git push origin.wiki",
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "强制同步推送到仓库和 Wiki",
+            "type": "shell",
+            "windows": {
+                "command": "powershell",
+                "args": [
+                    "-Command",
+                    "& git push -f origin ; git push -f origin.wiki"
+                ],
+            },
+            "linux": {
+                "command": "git push -f origin ; git push -f origin.wiki",
             },
             "problemMatcher": []
         }
