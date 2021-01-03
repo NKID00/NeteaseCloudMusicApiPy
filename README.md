@@ -30,7 +30,7 @@ with ncmapi() as api:
 
 ## 特性
 
-- 简单有效地管理服务进程
+- 简单有效的服务进程管理系统
 
 - Python 风格的使用方式
 
@@ -38,7 +38,7 @@ with ncmapi() as api:
 
 - 支持使用 Mypy 进行静态类型检查
 
-- 仅支持 Python 3
+- 仅支持 Python 3.5+
 
 ## 文档
 
