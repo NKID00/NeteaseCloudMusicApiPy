@@ -34,8 +34,10 @@ from time import time
 from requests import Session
 from hashlib import md5
 
-__all__ = ['start_ncmapi_server', 'stop_ncmapi_server',
+__all__ = ['VERSION', 'start_ncmapi_server', 'stop_ncmapi_server',
            'ncmapi', 'NeteaseCloudMusicApi']
+
+VERSION = 'NeteaseCloudMusicApiPy 0.1.0'
 
 
 def start_ncmapi_server(ncmapi_server_command: Iterable[str],
