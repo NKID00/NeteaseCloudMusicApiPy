@@ -38,9 +38,8 @@ __all__ = ['start_ncmapi_server', 'stop_ncmapi_server',
            'ncmapi', 'NeteaseCloudMusicApi']
 
 
-def start_ncmapi_server(
-        ncmapi_server_command: Iterable[str] = ('node', 'app.js'),
-        port: int = 3000, host: str = 'localhost') -> int:
+def start_ncmapi_server(ncmapi_server_command: Iterable[str],
+                        port: int = 3000, host: str = 'localhost') -> int:
     '''启动指定的 NeteaseCloudMusicApi 服务进程并返回进程 pid'''
     env = dict(environ)
     env['HOST'] = str(host)
@@ -56,9 +55,10 @@ def stop_ncmapi_server(ncmapi_server_pid: int) -> None:
 
 
 @contextmanager
-def ncmapi(ncmapi_server_command: Iterable[str] = ('node', 'app.js'),
+def ncmapi(ncmapi_server_command: Iterable[str],
            port: int = 3000, host: str = 'localhost'):
-    '''启动指定的 NeteaseCloudMusicApi 服务进程并返回 NeteaseCloudMusicApi 对象
+    '''启动指定的 NeteaseCloudMusicApi 服务进程
+    并返回 NeteaseCloudMusicApi 对象
     退出运行时上下文时自动退出登录并停止 NeteaseCloudMusicApi 服务进程'''
     pid = None
     try:
